@@ -10,6 +10,70 @@
     <main>
       <form action="">
         <!-- Add your code here -->
+        <h1>Form</h1>
+        <!-- div: puts all elements contained in it in a block element 
+             (entries will go on new line), aids formatting-->
+        <div>
+        <!-- press label + tab: skeleton for labeling an input field
+             for = needs to match with id of input element-->
+          <label for="username">Name</label>
+        <!-- press input:text + tab: skeleton for text input-->
+        <!-- id: used to associate input element to a label-->
+        <!-- placeholder: adds gray text into input boxes-->
+          <input 
+            type="text" 
+            name="username" 
+            id="username" 
+            placeholder="Full Name"
+          />
+        <!-- press input:submit + tab: skeleton for submit button input
+             the value entry will be what is shown in the button-->
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <input 
+            type="email" 
+            name="email" 
+            id="email" 
+            placeholder="email address"
+          />
+        </div>
+        <!-- br: line break-->
+        <br />
+        <!--fieldset: puts a border around the following elements-->
+        <fieldset>
+          <!--legend: describes the group of radio buttons-->
+          <legend>Favorite Character</legend>
+          <!--press input:radio + tab: creates a radio button
+              name: represents every option in the set of radio buttons
+              id: must be unique because of its association to a label-->
+          <input type="radio" name="character" id="spongebob" />
+          <label for="spongebob">Spongebob</label>
+          <br />
+          <input type="radio" name="character" id="sandy" />
+          <label for="sandy">Sandy</label>
+          <br />
+          <input type="radio" name="character" id="patrick"/>
+          <label for="patrick">Patrick</label>
+        </fieldset>
+        <br />
+        <fieldset>
+          <legend>Are you a fan of the show?</legend>
+          <!--press input:checkbox + tab: allows checkbox elements
+              name: describes all elements in the set of checkboxes
+              id: must be unique because of its association to a label-->
+          <input type="checkbox" name="episodes" id="option1">
+          <label for="option1">Yes, I have watched all the episodes!</label>
+          <br />
+          <input type="checkbox" name="episodes" id="option2">
+          <label for="option2">Yes, it's got the best memes.</label>
+        </fieldset>
+        <br />
+        <div>
+          <input type="submit" value="Submit" />
+        <!-- press input:reset + tab: skeleton for reset button input-->
+          <input type="reset" value="Reset" />
+      </div>
       </form>
     </main>
   </body>
