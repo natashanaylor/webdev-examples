@@ -9,18 +9,46 @@
   color: var(--white);
 }
 
+.main {
+  margin-top: 80px;
+}
+
+/* note: redundant to write position: static, as these will set
+        to static by default
+*/
 .static {
+  position: static;
+  width: 300px;
+  height: 400px;
   background-color: var(--darkviolet);
 }
 
+/* top is a negative value because this box is being moved relative to
+   it's placement in the normal flow */
 .relative {
+  position: relative;
+  top: -400px;
+  left: 310px;
+  width: 300px;
+  height: 400px;
   background-color: var(--purple);
 }
 
+/* positions absolute and fixed move elements out of the normal flow */
 .absolute {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 70px;
   background-color: var(--maroon);
 }
 
 .fixed {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 70px;
   background-color: var(--darkgolden);
 }
