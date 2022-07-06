@@ -1,25 +1,56 @@
 /* Specificity Exercise */
 
+/* X - Y - Z
+   X: # of id selectors
+   Y: # of class, psuedo-class, and attribute selectors
+   Z: # of element and psuedo-element selector
+*/
+
+/* X: 0
+   Y: 1, class (.list-item)
+   Z: 2, (nav), (a)
+*/
 nav .list-item > a {
   color: var(--purple);
 }
 
+/* X: 1 id (#)
+   Y: 0 
+   Z: 1, psuedo-element (::)
+*/
 #main::first-letter {
   color: var(--purple);
 }
 
+/* X: 0
+   Y: 1, attributes ([])
+   Z: 1, input type
+*/
 input[type] {
   color: var(--purple);
 }
 
+/* X: 0
+   Y: 1, class (.main)
+   Z: 2, element (section), psuedo-element (first-line)
+*/
 section .main::first-line {
   color: var(--purple);
 }
 
+/* X: 1, id (#first)
+   Y: 2, class (.menu), psuedo-class (not) ** not class isn't included in specificity, but it's contents are (inside parentheses)
+   Z: 4, elements (nav, ul, li, a)
+*/
 nav ul.menu li#first a:not([class='visited']) {
   color: var(--purple);
 }
 
+/* X: 0
+   Y: 0
+   Z: 10, elements (div, ol, li, ul, li, ol, li, ul, li, a)
+*/
+/*note: this is generally bad CSS*/
 div ol li ul li ol li ul li a {
   color: var(--purple);
 }
