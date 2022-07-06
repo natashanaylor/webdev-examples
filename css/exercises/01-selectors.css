@@ -10,12 +10,53 @@
 
 /* Use attribute selectors for the first part of the exercise */
 
-li[class] {
+/* []: existence selector, checks if attribute exists on a specific element
+   [=]: equality selector
+   [~=]: space selector, checks if that you have more than one class element, that one of them is available
+   [^=]: prefix selector, looking for anything that starts with the specified letters
+   [$=]: suffix selector, looking for anything that ends with specified letters
+   [*=]: substring selector, checks if specific substring exists in the class definition
+*/
+
+/* li[class] {
   color: var(--red);
+} */
+
+/* example of equality selector using id attribute */
+li[id="cat"]{
+  color: var(--teal);
+}
+
+/* example of prefix selector */
+li[class^="p"]{
+  color: var(--green);
+}
+
+/* example of substring selector */
+li[class*="do"]{
+  color: var(--royalblue);
+}
+
+/* example of suffix selector
+   note: the order of this matters. if this were to come before the substring selector,
+         then we would get an incorrect result  */
+li[class$='g']{
+  color: var(--violet);
 }
 
 /* Use descendant, child, and sibling selectors for the second part */
 
 section li {
   color: var(--green);
+}
+
+/* Applying the color purple to all adjacent siblings to the class "first" 
+   Syntax reading: class first adjacent to list elements (siblings)*/
+.first ~ li {
+  color: var(--violet);
+}
+
+/* applying to the second class's immediately adjacent sibling (the next sibling) */
+.second + li {
+  color: var(--royalblue);
 }
