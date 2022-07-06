@@ -6,10 +6,12 @@ body {
   color: var(--black);
 }
 
+/* content-box: width of the box = width of the content */
+/* border-box: width of the specific element contains the content, the padding, and the border */
 header,
 section,
 aside {
-  box-sizing: content-box;
+  box-sizing: border-box;
   padding: 10px;
   border: 4px solid var(--black);
 }
@@ -18,6 +20,7 @@ header {
   background-color: var(--blue);
 }
 
+/* inline-block: neighboring elements can be next to one another, if they fit */
 section {
   display: inline-block;
   width: 75%;
