@@ -1,3 +1,78 @@
+/* View from a mobile first perspective: build the mobile view first then consider other views */
+
+
+/* Changing nav bar: MUST be at the top of the page */
+nav {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  background-color: var(--black);
+}
+
+/* Applying changes to ul inside of nav (Changing bullet points) */
+nav ul {
+  /* MUST use the following to override list-style-type: disc */
+  list-style-type: none;
+  margin: 0;
+  /* remove padding after removing bullet points */
+  padding: 0;
+}
+
+/* Applying changes to the list elements in the unordered list inside nav
+   (Making the bullet list elements inline) */
+nav ul li {
+  display: inline-block;
+}
+
+
+/* Applying changes to a links, inside li, inside ul, inside nav 
+   (Changing text decoration for anchor links) */
+nav ul li a {
+  display: block;
+  padding: 1em;
+  text-decoration: none;
+  color: var(--white);
+}
+
+/*Adds background color when hovering over list elements */
+nav ul li:hover{
+  background-color: var(--gray1);
+}
+
+/* Moves the main content lower, so that the nav bar doesn't hide it */
+.main{
+  margin-top: 100px;
+  padding: 0 0.5em;
+}
+
+/* default (mobile view): background color will be purple */
+body{
+  background: var(--purple);
+  color: var(--white);
+}
+
+/* Everything smaller than 415px is the screen size that the default will be applied at */
+@media (max-width: 414px){
+  /* Making sure the nav bar is "stacked" when on mobile */
+  nav ul li{
+    width: 100%;
+  }
+  /* Adding margin at the top so nav bar adjustment doesn't block content */
+  .main {
+    margin-top: 220px;
+  }
+}
+
+/* Everything between 415px-1023px will have an orange background */
+@media (min-width: 415px) and (max-width: 1023px) {
+  body {
+    background: var(--orange);
+    color: var(--black);
+  }
+}
+
+/*Everything 1024px and larger will have a green background */
 @media (min-width: 1024px) {
   body {
     background: var(--green);
