@@ -1,17 +1,57 @@
 .grid-container {
+  /* sets up grid struccture */
+  display: grid;
+
+  /* adds gap between all child elements */
+  gap: 10px;
+
   background-color: rgb(190, 190, 231);
 }
 
+
 /* Grid Container 1 */
+.grid-container-1{
+  /* sets up the number of columns (3), fr: fractional unit */
+  grid-template-columns: 1fr 3fr 3fr;
+}
+
 
 /* Grid Container 2 */
-
 /* use height: 400px; on the container */
+.grid-container-2{
+  height: 400px;
+  grid-template-columns: 20% 40% 20% 20%;
+  grid-template-rows: 1fr 4fr;
+}
 
 /* Grid Container 3 */
-
 /* use height: 400px; on the container */
+.grid-container-3{
+  height: 400px;
+  grid-template-columns: 20% 40% 40%;
+  grid-template-rows: 1fr 2fr 2fr;
+}
+
+.grid-container-3 .item8 {
+  /* allows the specific item to span 2 columns */
+  grid-column: span 2;
+}
 
 /* Grid Container 4 */
-
 /* use height: 600px; on the container */
+.grid-container-4{
+  height: 600px;
+  grid-template-columns: 1fr 3fr;
+
+  /* sets the number of rows and the spacing of them */
+  grid-template-rows: repeat(5, 1fr);
+}
+
+.grid-container-4 .item1 {
+  /* allows the specific atem to span 2 rows */
+  grid-row: span 2;
+}
+
+.grid-container .item6{
+  grid-column: span 2;
+}
