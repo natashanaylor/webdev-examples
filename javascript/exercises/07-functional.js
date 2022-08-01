@@ -23,19 +23,62 @@ const mapNameFamily = (characters) => {
   // Return an array with the name and house of each character
   // Format: "Arya, of House Stark"
 
-  return characters;
+  //alternative writing:
+  // const nameFamily = characters.map((item) => {
+  //   return item.name;
+  // });
+
+  //implicit return
+  const nameFamily = characters.map(
+    item => `${item.name}, of House ${item.house}`
+  );
+
+  return nameFamily;
 };
 
 const filterFamily = (characters, house) => {
   // Return an array with only the characters from a given house
 
-  return characters;
+  const houses = characters.filter(item => item.house === house);
+  return houses;
 };
 
 const reduceHouses = (characters) => {
   // Return an object with the number of characters from each house
 
-  return characters;
+  //can hard-code object as an alternative
+  // const obj = {
+  //   'Stark': 0,
+  //   'Lannister': 0,
+  //   'Targaryen': 0,
+  //   'Greyjoy': 0,
+  //   'Seaworth': 0,
+  //   'Tarth': 0 
+  // };
+
+  const houses = characters.reduce((accumulator, current) => {
+    
+    //shorthand way
+    accumulator.hasOwnProperty(current.house) 
+      ? accumulator[current.house]++ :
+      (accumulator[current.house] = 1);
+    
+    //alternative way to write this, longer:
+    //if the new array has the current house already, increment its value
+    // if (accumulator.hasOwnProperty(current.house)){
+    //   accumulator[current.house]++;
+    // }
+    // //if it doesn't exist, we create the new house, updating its value to 1
+    // else{
+    //   accumulator[current.house] = 1;
+    // }
+
+    //explicit return
+    return accumulator;
+
+  }, {});
+
+  return houses;
 };
 
 console.log(mapNameFamily(characters));
